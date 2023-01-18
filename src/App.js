@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Signup from './components/Signup';
+import Profile from './components/LinkProfile';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col h-screen overflow-auto items-center bg-gray-900">
+      <h1 className="text-2xl text-white font-semibold py-4">ACETAP</h1>
+      <Router>
+        <Routes>
+          {/* <Route path="/" element={<Signup />} /> */}
+          <Route path="/:id" element={<Profile />} />
+        </Routes>
+      </Router>
+      <p className="mt-6 mb-4 text-center text-white">Made with ❤️ by Acetap.</p>
+
     </div>
   );
 }
